@@ -343,26 +343,26 @@ const checkIfPropertyExistsAndTruthy = (a, b) => {
   // It should return an object with all original object properties
   // except for the property with key 'b'
   // Tip: Spread syntax
-  function removePropertyB (obj){
+  const removePropertyB = (obj)=> {
     const newObj = {...obj}
     delete newObj.b
     return newObj
   }
   removePropertyB({ a: 1, b: 7, c: 3 })
-
-  function removePropertyB (obj){
+// ****************************************************************
+  const removePropertyB2 = (obj)=> {
     const newObj = {...obj}
     delete newObj.b
     return newObj
   }
-  removePropertyB({ b: 0, a: 7, d: 8 })
-
-  function removePropertyB (obj){
+  removePropertyB2({ b: 0, a: 7, d: 8 })
+// ****************************************************************
+  const removePropertyB3 = (obj)=> {
     const newObj = {...obj}
     delete newObj.b
     return newObj
   }
-  removePropertyB({ e: 6, f: 4, b: 5, a: 3 })
+  removePropertyB3({ e: 6, f: 4, b: 5, a: 3 })
   
   /*
   Test cases:
@@ -380,7 +380,7 @@ const checkIfPropertyExistsAndTruthy = (a, b) => {
   // Return the resulting object
   // It should have the properties 'a', 'b', 'c', 'd', and 'e'
   // Tip: Spread syntax
-  function mergeAndFixObjects (x, y){
+  const mergeAndFixObjects = (x, y) => {
     const mergedObj = {...x, ...y};
     if (y.hasOwnProperty('b')) {
         mergedObj.d = y.b
@@ -389,8 +389,8 @@ const checkIfPropertyExistsAndTruthy = (a, b) => {
     return mergedObj
   }
   mergeAndFixObjects({ a: 1, b: 2 }, { c: 3, b: 4, e: 5 })
-
-  function mergeAndFixObjects (x, y){
+// ****************************************************************
+  const mergeAndFixObjects2 = (x, y) => {
     const mergedObj = {...x, ...y}
     if (y.hasOwnProperty('b')) {
         mergedObj.d = y.b
@@ -398,7 +398,7 @@ const checkIfPropertyExistsAndTruthy = (a, b) => {
     Object.assign(mergedObj, x)
     return mergedObj
   }
-  mergeAndFixObjects({ a: 5, b: 4 }, { c: 3, b: 1, e: 2 })
+  mergeAndFixObjects2({ a: 5, b: 4 }, { c: 3, b: 1, e: 2 })
   /*
   Test cases:
   myFunction({ a: 1, b: 2 }, { c: 3, b: 4, e: 5 }) Expected { a: 1, b: 2, c: 3, e: 5, d: 4}
@@ -410,7 +410,7 @@ const checkIfPropertyExistsAndTruthy = (a, b) => {
   // Write a function that takes an object (a) and a number (b) as arguments
   // Multiply all values of 'a' by 'b'
   // Return the resulting object
-  function multipyAllValuesByB(a, b){
+  const multipyAllValuesByB = (a, b) => {
     const result = {}
     for(let key in a) {
         if(a.hasOwnProperty(key)) {
@@ -420,8 +420,8 @@ const checkIfPropertyExistsAndTruthy = (a, b) => {
     return result
   }
   multipyAllValuesByB({a:1,b:2,c:3},3)
-
-  function multipyAllValuesByB(a, b){
+// ****************************************************************
+const multipyAllValuesByB2 = (a, b) => {
     const result = {}
     for(let key in a) {
         if(a.hasOwnProperty(key)) {
@@ -430,9 +430,9 @@ const checkIfPropertyExistsAndTruthy = (a, b) => {
     }
     return result
   }
-  multipyAllValuesByB({j:9,i:2,x:3,z:4},10)
-
-  function multipyAllValuesByB(a, b){
+  multipyAllValuesByB2({j:9,i:2,x:3,z:4},10)
+// ****************************************************************
+const multipyAllValuesByB3 = (a, b) => {
     const result = {}
     for(let key in a) {
         if(a.hasOwnProperty(key)) {
@@ -441,7 +441,7 @@ const checkIfPropertyExistsAndTruthy = (a, b) => {
     }
     return result
   }
-  multipyAllValuesByB({w:15,x:22,y:13},6)
+  multipyAllValuesByB3({w:15,x:22,y:13},6)
   
   /*
   Test cases:
